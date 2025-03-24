@@ -1,0 +1,1952 @@
+<style>
+	.DMS, .ServiceNowTopics, .ServiceNowEachTopic {
+  page-break-after: always;
+}
+</style>
+<section class="DMS Basic Example">
+<strong>Deals Management Service (DMS)</strong> refers to the process of organizing, tracking, maintaining, prioritizing, and analyzing deals throughout their lifecycle to maximize value and efficiency. 
+Here are the steps involved in implementing a DMS:</p>
+<ol>
+<li>
+<p><strong>Process Planning Stage</strong>:</p>
+<ul>
+<li>Define the deal management process that suits your company's needs and resources.</li>
+<li>Identify the types of deals, responsible parties, past issues, and necessary resources.</li>
+</ul>
+</li>
+<li>
+<p><strong>Process Implementation Stage</strong>:</p>
+<ul>
+<li>Deploy an automated deal management system.</li>
+<li>Import data and onboard suppliers and team members to the new system.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pre-Deal Stage</strong>:</p>
+<ul>
+<li>Negotiate trading programs with partners.</li>
+<li>Provide commercial teams with necessary data for beneficial agreements.</li>
+</ul>
+</li>
+<li>
+<p><strong>Deal Stage</strong>:</p>
+<ul>
+<li>Execute the deal according to the agreed terms.</li>
+<li>Monitor the deal's progress and performance.</li>
+</ul>
+</li>
+<li>
+<p><strong>Handover Stage</strong>:</p>
+<ul>
+<li>Transition the deal to the execution phase.</li>
+<li>Ensure all stakeholders are informed and aligned.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pre-Renegotiation Stage</strong>:</p>
+<ul>
+<li>Review the deal's performance and identify areas for improvement.</li>
+<li>Prepare for renegotiation if necessary.</li>
+</ul>
+</li>
+<li>
+<p><strong>Post-Deal Stage</strong>:</p>
+<ul>
+<li>Analyze the deal's outcomes and document lessons learned.</li>
+<li>Use insights to improve future deal management processes.</li>
+</ul>
+</li>
+</ol>
+<br/><br/>
+</section>
+
+
+<section class="ServiceNowTopics">
+<div style="font-family:Arial">
+
+	<p>ServiceNow for a Deals Management Service (DMS) project:</p>
+<h3>1. Catalog Item</h3>
+<ul>
+<li><strong>Category</strong>: Create a category called "Deals Management" to group related catalog items.</li>
+<li><strong>Request</strong>: A catalog item for requesting a new deal approval.</li>
+<li><strong>Requested Item</strong>: Track the status of the deal approval request.</li>
+<li><strong>SC Tasks</strong>: Tasks assigned to fulfill the deal approval request.</li>
+<li><strong>Homepage</strong>: A homepage for the Deals Management catalog with quick links to popular requests.</li>
+<li><strong>Variables</strong>: Variables to capture details like deal type, client name, and urgency.</li>
+<li><strong>Variable Set</strong>: A set of variables for common deal request details.</li>
+<li><strong>Client Script</strong>: A script to auto-fill the requester's department based on their user profile.</li>
+<li><strong>UI Policy</strong>: A policy to make the urgency field mandatory if the deal type is "High Value".</li>
+<li><strong>User Criteria</strong>: Criteria to restrict access to the catalog item to specific user roles.</li>
+<li><strong>Flow Designer</strong>: A flow to automate the approval and fulfillment process for deal requests.</li>
+</ul>
+<h3>2. Scripting</h3>
+<ul>
+<li><strong>GlideAjax</strong>: Use GlideAjax to fetch deal-related data from a third-party system.</li>
+<li><strong>Business Rule</strong>: A rule to update the deal status when a related task is completed.</li>
+<li><strong>Client Script</strong>: A script to validate the deal name format on the client side.</li>
+<li><strong>UI Policy</strong>: A policy to show/hide fields based on the deal type selected.</li>
+<li><strong>UI Scripts</strong>: Custom JavaScript functions to be used across multiple client scripts.</li>
+<li><strong>UI Action</strong>: A button to trigger a deal review process.</li>
+<li><strong>Script Include</strong>: A reusable script to handle deal validation logic.</li>
+<li><strong>Script Actions</strong>: Actions to send notifications when a deal is approved.</li>
+<li><strong>Events</strong>: Custom events to log deal access and modifications.</li>
+<li><strong>Scheduled Jobs</strong>: A job to archive old deals periodically.</li>
+</ul>
+<h3>3. Transform Map</h3>
+<ul>
+<li><strong>Transform Map scripts</strong>: Scripts to transform incoming deal data to the target table format.</li>
+<li><strong>Data Source</strong>: Define a data source for importing deal data from an external system.</li>
+<li><strong>Source Script</strong>: A script to preprocess the incoming data before transformation.</li>
+<li><strong>Transform Map Creation</strong>: Create a transform map to map source fields to target fields.</li>
+<li><strong>Scheduled Import</strong>: Schedule regular imports of deal data from the external system.</li>
+</ul>
+<h3>4. Reports</h3>
+<ul>
+<li><strong>Basic Reports</strong>: A report showing the number of deals created per month.</li>
+<li><strong>Scheduled Reports</strong>: Schedule a report to be emailed to managers every week.</li>
+<li><strong>Performance Analytics Report</strong>: A report tracking the average time to approve deals.</li>
+<li><strong>Dashboards</strong>: A dashboard displaying key metrics like deal approval rates.</li>
+<li><strong>Dashboards with multiple Tabs</strong>: A dashboard with tabs for different departments' deal metrics.</li>
+</ul>
+<h3>5. Tables &amp; Forms</h3>
+<ul>
+<li><strong>Table Creation</strong>: Create a custom table for storing deal metadata.</li>
+<li><strong>Fields Creation</strong>: Add fields like deal name, type, and status to the table.</li>
+<li><strong>Form Design</strong>: Design a form for entering and viewing deal details.</li>
+<li><strong>List Layout Design</strong>: Customize the list layout to show important deal fields.</li>
+<li><strong>Related Lists</strong>: Add related lists to show tasks and approvals related to a deal.</li>
+<li><strong>Relationships</strong>: Define relationships between deals and related records.</li>
+<li><strong>ACLs</strong>: Create access control rules to restrict who can view or edit deals.</li>
+<li><strong>ACL with scripting</strong>: Use scripts to enforce complex access control logic.</li>
+<li><strong>Views</strong>: Create different views for different user roles (e.g., admin, user).</li>
+</ul>
+<h3>6. Service Portal</h3>
+<ul>
+<li><strong>Portal</strong>: Create a service portal for deal management.</li>
+<li><strong>Pages</strong>: Design pages for submitting requests, viewing deals, and managing tasks.</li>
+<li><strong>Widgets</strong>: Develop widgets to display deal lists and details.</li>
+<li><strong>Instance with Widget</strong>: Embed a widget instance on a portal page.</li>
+<li><strong>Templates</strong>: Use templates to standardize the look and feel of portal pages.</li>
+<li><strong>Dependencies</strong>: Manage dependencies between widgets and data sources.</li>
+<li><strong>HTML</strong>: Use HTML to structure the content of portal pages.</li>
+<li><strong>CSS</strong>: Apply CSS to style the portal and widgets.</li>
+<li><strong>Client</strong>: Write client-side scripts to enhance portal functionality.</li>
+<li><strong>Server</strong>: Write server-side scripts to handle data processing and business logic.</li>
+</ul>
+<h3>7. Applications</h3>
+<ul>
+<li><strong>Different Applications</strong>: Create custom applications for different deal management functions.</li>
+<li><strong>Cross Scope Policy</strong>: Define policies for accessing data across different application scopes.</li>
+<li><strong>Scopes</strong>: Manage application scopes to organize and secure custom applications.</li>
+<li><strong>Update Set</strong>: Use update sets to track and migrate changes between instances.</li>
+<li><strong>Github</strong>: Integrate with GitHub for version control of application code.</li>
+<li><strong>Domains</strong>: Use domain separation to manage data and processes for different business units.</li>
+</ul>
+<h3>8. User Administration</h3>
+<ul>
+<li><strong>Users</strong>: Create user records for employees who will use the deal management system.</li>
+<li><strong>Groups</strong>: Create groups for different roles like deal creators, reviewers, and approvers.</li>
+<li><strong>Roles</strong>: Define roles to control access to different parts of the deal management system.</li>
+</ul></div>
+<br/><br/>
+</section>
+
+
+<section class="ServiceNowEachTopic 1. Catalog Item" >
+<div  style="font-family:Arial">
+<h3>1. Catalog Item</h3>
+<h4>Category</h4>
+<ul>
+<li><strong>Definition</strong>: Create a category called "Deals Management" to group related catalog items.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to <strong>Service Catalog &gt; Catalog Definitions &gt; Maintain Categories</strong>.</li>
+<li>Click <strong>New</strong> and name the category "Deals Management".</li>
+<li>Save the category.</li>
+</ul>
+</li>
+</ul>
+<h4>Request</h4>
+<ul>
+<li><strong>Definition</strong>: A catalog item for requesting a new deal approval.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to <strong>Service Catalog &gt; Catalog Definitions &gt; Maintain Items</strong>.</li>
+<li>Click <strong>New</strong> and name the item "Request Deal Approval".</li>
+<li>Set the category to "Deals Management".</li>
+<li>Add a description and save the item.</li>
+</ul>
+</li>
+</ul>
+<h4>Requested Item</h4>
+<ul>
+<li><strong>Definition</strong>: Track the status of the deal approval request.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>The requested item is automatically created when a user submits the catalog item.</li>
+<li>Navigate to <strong>Service Catalog &gt; Requests</strong> to view and track the status.</li>
+</ul>
+</li>
+</ul>
+<h4>SC Tasks</h4>
+<ul>
+<li><strong>Definition</strong>: Tasks assigned to fulfill the deal approval request.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to the catalog item and click on the <strong>Process Engine</strong> tab.</li>
+<li>Add a new task to be assigned to the deal approval team.</li>
+<li>Define the task details and save.</li>
+</ul>
+</li>
+</ul>
+<h4>Homepage</h4>
+<ul>
+<li><strong>Definition</strong>: A homepage for the Deals Management catalog with quick links to popular requests.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to <strong>Self-Service &gt; Homepage</strong>.</li>
+<li>Create a new homepage and add widgets for quick links to popular deal requests.</li>
+</ul>
+</li>
+</ul>
+<h4>Variables</h4>
+<ul>
+<li><strong>Definition</strong>: Variables to capture details like deal type, client name, and urgency.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to the catalog item and click on the <strong>Variables</strong> tab.</li>
+<li>Add variables for deal type, client name, and urgency.</li>
+<li>Define the variable details and save.</li>
+</ul>
+</li>
+</ul>
+<h4>Variable Set</h4>
+<ul>
+<li><strong>Definition</strong>: A set of variables for common deal request details.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to <strong>Service Catalog &gt; Catalog Variables &gt; Variable Sets</strong>.</li>
+<li>Click <strong>New</strong> and name the set "Deal Request Details".</li>
+<li>Add the previously created variables to this set.</li>
+<li>Save the variable set.</li>
+</ul>
+</li>
+</ul>
+<h4>Client Script</h4>
+<ul>
+<li><strong>Definition</strong>: A script to auto-fill the requester's department based on their user profile.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to the catalog item and click on the <strong>Catalog Client Scripts</strong> tab.</li>
+<li>Click <strong>New</strong> and add the following script:
+<pre><code>function onLoad() {
+    var userDept = g_user.getDepartment();
+    g_form.setValue('department', userDept);
+}
+</code></pre>
+</li>
+<li>Save the client script.</li>
+</ul>
+</li>
+</ul>
+<h4>UI Policy</h4>
+<ul>
+<li><strong>Definition</strong>: A policy to make the urgency field mandatory if the deal type is "High Value".</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to the catalog item and click on the <strong>Catalog UI Policies</strong> tab.</li>
+<li>Click <strong>New</strong> and define the conditions and actions:
+<ul>
+<li>Condition: <code>deal_type == 'High Value'</code></li>
+<li>Action: Set the urgency field to mandatory.</li>
+</ul>
+</li>
+<li>Save the UI policy.</li>
+</ul>
+</li>
+</ul>
+<h4>User Criteria</h4>
+<ul>
+<li><strong>Definition</strong>: Criteria to restrict access to the catalog item to specific user roles.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to the catalog item and click on the <strong>Available For</strong> tab.</li>
+<li>Add user criteria to restrict access to roles like "Deal Manager" and "Sales Team".</li>
+<li>Save the criteria.</li>
+</ul>
+</li>
+</ul>
+<h4>Flow Designer</h4>
+<ul>
+<li><strong>Definition</strong>: A flow to automate the approval and fulfillment process for deal requests.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to <strong>Flow Designer &gt; Designer</strong>.</li>
+<li>Create a new flow called "Deal Approval Process".</li>
+<li>Add a trigger for the catalog item submission.</li>
+<li>Add actions for approval steps, task creation, and notifications.</li>
+<li>Save and activate the flow.</li>
+</ul>
+</li>
+</ul>
+</div>
+<br/><br/>
+</section>
+
+
+
+<section class="ServiceNowEachTopic 2. Scripting" >
+<div style="font-family:Arial">
+<h3>2. Scripting</h3>
+<h4>GlideAjax</h4>
+<ul>
+<li><strong>Definition</strong>: Use GlideAjax to fetch deal-related data from a third-party system.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Script Include</strong>:
+<pre><code>var DealDataFetcher = Class.create();
+DealDataFetcher.prototype = {
+    initialize: function() {},
+    getDealData: function(dealId) {
+        // Logic to fetch data from third-party system
+        return "Deal data for " + dealId;
+    },
+    type: 'DealDataFetcher'
+};
+</code></pre>
+</li>
+<li><strong>Client Script</strong>:
+<pre><code>function fetchDealData() {
+    var ga = new GlideAjax('DealDataFetcher');
+    ga.addParam('sysparm_name', 'getDealData');
+    ga.addParam('dealId', g_form.getValue('deal_id'));
+    ga.getXMLAnswer(function(response) {
+        var answer = response.responseXML.documentElement.getAttribute("answer");
+        g_form.setValue('deal_data', answer);
+    });
+}
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Business Rule</h4>
+<ul>
+<li><strong>Definition</strong>: A rule to update the deal status when a related task is completed.</li>
+<li><strong>Example</strong>:
+<pre><code>(function executeRule(current, previous /*null when async*/) {
+    if (current.state == 'Closed Complete') {
+        var deal = new GlideRecord('u_deal');
+        if (deal.get(current.u_deal)) {
+            deal.setValue('status', 'Completed');
+            deal.update();
+        }
+    }
+})(current, previous);
+</code></pre>
+</li>
+</ul>
+<h4>Client Script</h4>
+<ul>
+<li><strong>Definition</strong>: A script to validate the deal name format on the client side.</li>
+<li><strong>Example</strong>:
+<pre><code>function onSubmit() {
+    var dealName = g_form.getValue('deal_name');
+    var regex = /^[A-Za-z0-9 ]+$/;
+    if (!regex.test(dealName)) {
+        alert('Deal name can only contain alphanumeric characters and spaces.');
+        return false;
+    }
+    return true;
+}
+</code></pre>
+</li>
+</ul>
+<h4>UI Policy</h4>
+<ul>
+<li><strong>Definition</strong>: A policy to show/hide fields based on the deal type selected.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>UI Policy</strong>:
+<ul>
+<li>Condition: <code>deal_type == 'High Value'</code></li>
+<li>Action: Show the "high_value_details" field.</li>
+</ul>
+</li>
+<li><strong>UI Policy Script</strong>:
+<pre><code>function onCondition() {
+    g_form.setDisplay('high_value_details', true);
+}
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<h4>UI Scripts</h4>
+<ul>
+<li><strong>Definition</strong>: Custom JavaScript functions to be used across multiple client scripts.</li>
+<li><strong>Example</strong>:
+<pre><code>var DealUtils = Class.create();
+DealUtils.prototype = {
+    initialize: function() {},
+    validateDealName: function(dealName) {
+        var regex = /^[A-Za-z0-9 ]+$/;
+        return regex.test(dealName);
+    },
+    type: 'DealUtils'
+};
+</code></pre>
+</li>
+</ul>
+<h4>UI Action</h4>
+<ul>
+<li><strong>Definition</strong>: A button to trigger a deal review process.</li>
+<li><strong>Example</strong>:
+<pre><code>function triggerDealReview() {
+    var dealId = g_form.getValue('sys_id');
+    var ga = new GlideAjax('DealReviewTrigger');
+    ga.addParam('sysparm_name', 'startReview');
+    ga.addParam('dealId', dealId);
+    ga.getXMLAnswer(function(response) {
+        alert('Deal review process started.');
+    });
+}
+</code></pre>
+</li>
+</ul>
+<h4>Script Include</h4>
+<ul>
+<li><strong>Definition</strong>: A reusable script to handle deal validation logic.</li>
+<li><strong>Example</strong>:
+<pre><code>var DealValidator = Class.create();
+DealValidator.prototype = {
+    initialize: function() {},
+    validateDeal: function(dealId) {
+        var deal = new GlideRecord('u_deal');
+        if (deal.get(dealId)) {
+            // Validation logic
+            return true;
+        }
+        return false;
+    },
+    type: 'DealValidator'
+};
+</code></pre>
+</li>
+</ul>
+<h4>Script Actions</h4>
+<ul>
+<li><strong>Definition</strong>: Actions to send notifications when a deal is approved.</li>
+<li><strong>Example</strong>:
+<pre><code>(function executeAction(current) {
+    var gr = new GlideRecord('sys_email');
+    gr.initialize();
+    gr.setValue('subject', 'Deal Approved');
+    gr.setValue('body', 'The deal ' + current.number + ' has been approved.');
+    gr.setValue('recipient', current.requester.email);
+    gr.insert();
+})(current);
+</code></pre>
+</li>
+</ul>
+<h4>Events</h4>
+<ul>
+<li><strong>Definition</strong>: Custom events to log deal access and modifications.</li>
+<li><strong>Example</strong>:
+<pre><code>gs.eventQueue('deal.accessed', current, gs.getUserID(), gs.getUserName());
+</code></pre>
+</li>
+</ul>
+<h4>Scheduled Jobs</h4>
+<ul>
+<li><strong>Definition</strong>: A job to archive old deals periodically.</li>
+<li><strong>Example</strong>:
+<pre><code>var ArchiveOldDeals = Class.create();
+ArchiveOldDeals.prototype = {
+    initialize: function() {},
+    execute: function() {
+        var gr = new GlideRecord('u_deal');
+        gr.addQuery('status', 'Closed');
+        gr.query();
+        while (gr.next()) {
+            gr.setValue('archived', true);
+            gr.update();
+        }
+    },
+    type: 'ArchiveOldDeals'
+};
+</code></pre>
+</li>
+</ul>
+<br/><br/>
+</div>
+</section>
+
+<section class="ServiceNowEachTopic 3. Transform Map" >
+<div style="font-family:Arial">
+
+<h3>3. Transform Map</h3>
+<h4>Transform Map Scripts</h4>
+<ul>
+<li><strong>Definition</strong>: Scripts to transform incoming deal data to the target table format.</li>
+<li><strong>Example</strong>:
+<ul>
+<li><strong>onBefore Script</strong>: Executes before the source row is transformed into the target row.
+<pre><code>(function transformRow(source, target, map, log, action) {
+    // Example: Set default status if not provided
+    if (!source.status) {
+        target.status = 'New';
+    }
+})(source, target, map, log, action);
+</code></pre>
+</li>
+<li><strong>onAfter Script</strong>: Executes after the source row has been transformed into the target row.
+<pre><code>(function transformRow(source, target, map, log, action) {
+    // Example: Log the transformation
+    log.info('Transformed deal: ' + target.number);
+})(source, target, map, log, action);
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4>Data Source</h4>
+<ul>
+<li><strong>Definition</strong>: Define a data source for importing deal data from an external system.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to <strong>System Import Sets &gt; Administration &gt; Data Sources</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Deal Data Source</li>
+<li><strong>Type</strong>: File (or another appropriate type like JDBC, REST, etc.)</li>
+<li><strong>Format</strong>: CSV (or another appropriate format)</li>
+<li><strong>File Retrieval Method</strong>: Attach the file or specify the retrieval method.</li>
+</ul>
+</li>
+<li>Save the data source.</li>
+</ul>
+</li>
+</ul>
+<h4>Source Script</h4>
+<ul>
+<li><strong>Definition</strong>: A script to preprocess the incoming data before transformation.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to the data source and click on the <strong>Transform Map</strong> tab.</li>
+<li>Click <strong>New</strong> to create a new transform map.</li>
+<li>In the transform map, click on the <strong>Source Script</strong> tab and add the following script:
+<pre><code>(function preprocess(source) {
+    // Example: Convert deal amount to a number
+    source.amount = parseFloat(source.amount);
+})(source);
+</code></pre>
+</li>
+<li>Save the source script.</li>
+</ul>
+</li>
+</ul>
+<h4>Transform Map Creation</h4>
+<ul>
+<li><strong>Definition</strong>: Create a transform map to map source fields to target fields.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to <strong>System Import Sets &gt; Administration &gt; Transform Maps</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Deal Transform Map</li>
+<li><strong>Source Table</strong>: [Import Set Table]</li>
+<li><strong>Target Table</strong>: Deal [u_deal]</li>
+</ul>
+</li>
+<li>Save the transform map.</li>
+<li>Click on the <strong>Field Maps</strong> tab and map the source fields to the target fields.</li>
+<li>Save the field mappings.</li>
+</ul>
+</li>
+</ul>
+<h4>Scheduled Import</h4>
+<ul>
+<li><strong>Definition</strong>: Schedule regular imports of deal data from the external system.</li>
+<li><strong>Example</strong>:
+<ul>
+<li>Navigate to <strong>System Import Sets &gt; Scheduled Imports</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Scheduled Deal Import</li>
+<li><strong>Data Source</strong>: Deal Data Source</li>
+<li><strong>Run</strong>: Daily (or another appropriate frequency)</li>
+</ul>
+</li>
+<li>Save the scheduled import.</li>
+</ul>
+</li>
+</ul>
+<br/><br/>
+</div>
+</section>
+
+
+
+<section class="ServiceNowEachTopic 4. Reports" >
+<div style="font-family:Arial">
+
+
+<h3>4. Reports</h3>
+<h4>Basic Reports</h4>
+<ul>
+<li><strong>Definition</strong>: Simple reports that display data in various formats like lists, bar charts, pie charts, etc.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create a Basic Report</strong>:
+<ul>
+<li>Navigate to <strong>Reports &gt; Create New</strong>.</li>
+<li>Select the table, e.g., <code>u_deal</code>.</li>
+<li>Choose the report type, e.g., Bar Chart.</li>
+<li>Set filters, e.g., <code>status = 'Open'</code>.</li>
+<li>Group by <code>deal_type</code>.</li>
+<li>Save and run the report.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Scheduled Reports</h4>
+<ul>
+<li><strong>Definition</strong>: Reports that are automatically generated and distributed at specified intervals.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create a Scheduled Report</strong>:
+<ul>
+<li>First, create a basic report as described above.</li>
+<li>Navigate to the report and click on <strong>Schedule</strong>.</li>
+<li>Set the schedule parameters, e.g., run daily at 8 AM.</li>
+<li>Enter email addresses of recipients.</li>
+<li>Choose the format, e.g., PDF.</li>
+<li>Enable the schedule and submit.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Performance Analytics Report</h4>
+<ul>
+<li><strong>Definition</strong>: Advanced reports that use Performance Analytics to track and visualize key performance indicators (KPIs) over time.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create a Performance Analytics Report</strong>:
+<ul>
+<li>Navigate to <strong>Performance Analytics &gt; Indicators</strong>.</li>
+<li>Create an indicator, e.g., <code>Number of Open Deals</code>.</li>
+<li>Set the data source and conditions.</li>
+<li>Navigate to <strong>Performance Analytics &gt; Widgets</strong>.</li>
+<li>Create a widget to display the indicator.</li>
+<li>Add the widget to a Performance Analytics dashboard.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Dashboards</h4>
+<ul>
+<li><strong>Definition</strong>: Visual displays of multiple reports and widgets in one place, providing a real-time overview of critical data.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create a Dashboard</strong>:
+<ul>
+<li>Navigate to <strong>Self-Service &gt; Dashboards</strong>.</li>
+<li>Click <strong>Create New Dashboard</strong>.</li>
+<li>Name the dashboard, e.g., <code>Deals Management Dashboard</code>.</li>
+<li>Add widgets and reports to the dashboard.</li>
+<li>Save the dashboard.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Dashboards with Multiple Tabs</h4>
+<ul>
+<li><strong>Definition</strong>: Dashboards that have multiple tabs to organize different sets of reports and widgets.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create a Dashboard with Multiple Tabs</strong>:
+<ul>
+<li>Navigate to the dashboard created above.</li>
+<li>Click on <strong>Add Tab</strong> to create a new tab.</li>
+<li>Name the tab, e.g., <code>Sales Team View</code>.</li>
+<li>Add relevant widgets and reports to the tab.</li>
+<li>Repeat the process to add more tabs, e.g., <code>Executive View</code>, <code>Support Team View</code>.</li>
+<li>Save the dashboard.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+
+
+<br/><br/>
+</div>
+</section>
+
+
+
+<section class="ServiceNowEachTopic 5. Tables" >
+<div style="font-family:Arial">
+
+<h3>5. Tables &amp; Forms</h3>
+<h4>Table Creation</h4>
+<ul>
+<li><strong>Definition</strong>: Create a custom table for storing deal metadata.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>System Definition &gt; Tables</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Label</strong>: Deal</li>
+<li><strong>Name</strong>: u_deal</li>
+</ul>
+</li>
+<li>Save the table.</li>
+</ol>
+</li>
+</ul>
+<h4>Fields Creation</h4>
+<ul>
+<li><strong>Definition</strong>: Add fields like deal name, type, and status to the table.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to the newly created table.</li>
+<li>Click on the <strong>Columns</strong> tab.</li>
+<li>Add the following fields:
+<ul>
+<li><strong>Deal Name</strong>: String</li>
+<li><strong>Deal Type</strong>: Choice (e.g., New, Renewal, Upgrade)</li>
+<li><strong>Status</strong>: Choice (e.g., Open, In Progress, Closed)</li>
+<li><strong>Client Name</strong>: String</li>
+<li><strong>Amount</strong>: Decimal</li>
+</ul>
+</li>
+<li>Save the fields.</li>
+</ol>
+</li>
+</ul>
+<h4>Form Design</h4>
+<ul>
+<li><strong>Definition</strong>: Design a form for entering and viewing deal details.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>System UI &gt; Forms &gt; Form Layout</strong>.</li>
+<li>Select the <strong>Deal</strong> table.</li>
+<li>Add the fields to the form layout in a logical order.</li>
+<li>Save the form layout.</li>
+</ol>
+</li>
+</ul>
+<h4>List Layout Design</h4>
+<ul>
+<li><strong>Definition</strong>: Customize the list layout to show important deal fields.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>System UI &gt; Lists &gt; List Layout</strong>.</li>
+<li>Select the <strong>Deal</strong> table.</li>
+<li>Add the following fields to the list layout:
+<ul>
+<li>Deal Name</li>
+<li>Deal Type</li>
+<li>Status</li>
+<li>Client Name</li>
+<li>Amount</li>
+</ul>
+</li>
+<li>Save the list layout.</li>
+</ol>
+</li>
+</ul>
+<h4>Related Lists</h4>
+<ul>
+<li><strong>Definition</strong>: Add related lists to show tasks and approvals related to a deal.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>System Definition &gt; Tables</strong>.</li>
+<li>Open the <strong>Deal</strong> table.</li>
+<li>Click on the <strong>Related Lists</strong> tab.</li>
+<li>Add related lists for tasks and approvals.</li>
+<li>Save the related lists.</li>
+</ol>
+</li>
+</ul>
+<h4>Relationships</h4>
+<ul>
+<li><strong>Definition</strong>: Define relationships between deals and related records.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>System Definition &gt; Relationships</strong>.</li>
+<li>Click <strong>New</strong> and define a relationship:
+<ul>
+<li><strong>Name</strong>: Deal to Task</li>
+<li><strong>Parent Table</strong>: Deal</li>
+<li><strong>Child Table</strong>: Task</li>
+</ul>
+</li>
+<li>Save the relationship.</li>
+</ol>
+</li>
+</ul>
+<h4>ACLs</h4>
+<ul>
+<li><strong>Definition</strong>: Create access control rules to restrict who can view or edit deals.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>System Security &gt; Access Control (ACL)</strong>.</li>
+<li>Click <strong>New</strong> and define an ACL:
+<ul>
+<li><strong>Type</strong>: Record</li>
+<li><strong>Operation</strong>: Read</li>
+<li><strong>Name</strong>: Deal</li>
+<li><strong>Condition</strong>: <code>current.status == 'Open'</code></li>
+<li><strong>Roles</strong>: Deal_Manager</li>
+</ul>
+</li>
+<li>Save the ACL.</li>
+</ol>
+</li>
+</ul>
+<h4>ACL with Scripting</h4>
+<ul>
+<li><strong>Definition</strong>: Use scripts to enforce complex access control logic.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>System Security &gt; Access Control (ACL)</strong>.</li>
+<li>Click <strong>New</strong> and define an ACL:
+<ul>
+<li><strong>Type</strong>: Record</li>
+<li><strong>Operation</strong>: Write</li>
+<li><strong>Name</strong>: Deal</li>
+<li><strong>Script</strong>:
+<pre><code>(function() {
+    return gs.hasRole('deal_manager') &amp;&amp; current.status != 'Closed';
+})();
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Save the ACL.</li>
+</ol>
+</li>
+</ul>
+<h4>Views</h4>
+<ul>
+<li><strong>Definition</strong>: Create different views for different user roles (e.g., admin, user).</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>System UI &gt; Views</strong>.</li>
+<li>Click <strong>New</strong> and create a view:
+<ul>
+<li><strong>Name</strong>: Deal Admin View</li>
+</ul>
+</li>
+<li>Customize the form and list layouts for this view.</li>
+<li>Repeat the process to create a <strong>Deal User View</strong>.</li>
+<li>Assign the views to the appropriate roles.</li>
+</ol>
+</li>
+</ul>
+
+	
+
+<br/><br/>
+</div>
+</section>
+
+
+
+
+<section class="ServiceNowEachTopic 6. Service Portal" >
+<div style="font-family:Arial">
+
+
+<h3>6. Service Portal</h3>
+<h4>Portal</h4>
+<ul>
+<li><strong>Definition</strong>: Create a service portal for deal management.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>Service Portal &gt; Portals</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Deal Management Portal</li>
+<li><strong>URL Suffix</strong>: /deal_management</li>
+<li><strong>Homepage</strong>: Select or create a homepage for the portal.</li>
+</ul>
+</li>
+<li>Save the portal.</li>
+</ol>
+</li>
+</ul>
+<h4>Pages</h4>
+<ul>
+<li><strong>Definition</strong>: Design pages for submitting requests, viewing deals, and managing tasks.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>Service Portal &gt; Pages</strong>.</li>
+<li>Click <strong>New</strong> and create pages for:
+<ul>
+<li><strong>Submit Deal Request</strong>: A page with a form for submitting new deal requests.</li>
+<li><strong>View Deals</strong>: A page displaying a list of deals.</li>
+<li><strong>Manage Tasks</strong>: A page for managing tasks related to deals.</li>
+</ul>
+</li>
+<li>Add appropriate widgets to each page to provide the desired functionality.</li>
+</ol>
+</li>
+</ul>
+<h4>Widgets</h4>
+<ul>
+<li><strong>Definition</strong>: Develop widgets to display deal lists and details.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>Service Portal &gt; Widgets</strong>.</li>
+<li>Click <strong>New</strong> and create widgets such as:
+<ul>
+<li><strong>Deal List Widget</strong>: Displays a list of deals.</li>
+<li><strong>Deal Details Widget</strong>: Shows detailed information about a selected deal.</li>
+</ul>
+</li>
+<li>Use AngularJS, HTML, and CSS to develop the widgets.</li>
+</ol>
+</li>
+</ul>
+<h4>Instance with Widget</h4>
+<ul>
+<li><strong>Definition</strong>: Embed a widget instance on a portal page.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to the page where you want to embed the widget.</li>
+<li>Drag and drop the widget onto the page using the Service Portal Designer.</li>
+<li>Configure the widget instance options as needed.</li>
+</ol>
+</li>
+</ul>
+<h4>Templates</h4>
+<ul>
+<li><strong>Definition</strong>: Use templates to standardize the look and feel of portal pages.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>Service Portal &gt; Templates</strong>.</li>
+<li>Create or select a template for your portal pages.</li>
+<li>Apply the template to ensure a consistent design across all pages.</li>
+</ol>
+</li>
+</ul>
+<h4>Dependencies</h4>
+<ul>
+<li><strong>Definition</strong>: Manage dependencies between widgets and data sources.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Navigate to <strong>Service Portal &gt; Dependencies</strong>.</li>
+<li>Create a dependency package and add JavaScript and CSS files as needed.</li>
+<li>Link the dependency package to the relevant widgets.</li>
+</ol>
+</li>
+</ul>
+<h4>HTML</h4>
+<ul>
+<li><strong>Definition</strong>: Use HTML to structure the content of portal pages.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>In the widget editor, use HTML to define the structure of the widget content.</li>
+<li>Example:
+<pre><code>&lt;div class="deal-list"&gt;
+    &lt;h2&gt;Deal List&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li ng-repeat="deal in c.data.deals"&gt;{{deal.name}}&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>Save the widget.</li>
+</ol>
+</li>
+</ul>
+<h4>CSS</h4>
+<ul>
+<li><strong>Definition</strong>: Apply CSS to style the portal and widgets.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>In the widget editor, use CSS to style the widget.</li>
+<li>Example:
+<pre><code>.deal-list {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+.deal-list h2 {
+    color: #333;
+}
+</code></pre>
+</li>
+<li>Save the widget.</li>
+</ol>
+</li>
+</ul>
+<h4>Client</h4>
+<ul>
+<li><strong>Definition</strong>: Write client-side scripts to enhance portal functionality.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>In the widget editor, use AngularJS to write client-side scripts.</li>
+<li>Example:
+<pre><code>function($scope, $http) {
+    $scope.getDeals = function() {
+        $http.get('/api/now/table/u_deal').then(function(response) {
+            $scope.deals = response.data.result;
+        });
+    };
+    $scope.getDeals();
+}
+</code></pre>
+</li>
+<li>Save the widget.</li>
+</ol>
+</li>
+</ul>
+<h4>Server</h4>
+<ul>
+<li><strong>Definition</strong>: Write server-side scripts to handle data processing and business logic.</li>
+<li><strong>Example</strong>:
+<ol>
+<li>Create a Script Include to handle server-side logic.</li>
+<li>Example:
+<pre><code>var DealManager = Class.create();
+DealManager.prototype = {
+    initialize: function() {},
+    getDeals: function() {
+        var gr = new GlideRecord('u_deal');
+        gr.query();
+        var deals = [];
+        while (gr.next()) {
+            deals.push({
+                name: gr.getValue('name'),
+                status: gr.getValue('status')
+            });
+        }
+        return deals;
+    },
+    type: 'DealManager'
+};
+</code></pre>
+</li>
+<li>Call the Script Include from the widget server script:
+<pre><code>(function() {
+    var dealManager = new DealManager();
+    data.deals = dealManager.getDeals();
+})();
+</code></pre>
+</li>
+<li>Save the Script Include and the widget.</li>
+</ol>
+</li>
+</ul>
+
+	
+
+<br/><br/>
+</div>
+</section>
+
+
+<section class="ServiceNowEachTopic 7. Applications" >
+<div style="font-family:Arial">
+
+
+<h3>7. Applications</h3>
+<h4>Different Applications</h4>
+<ul>
+<li><strong>Definition</strong>: Create custom applications for different deal management functions.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create a Custom Application</strong>:
+<ul>
+<li>Navigate to <strong>System Applications &gt; Studio</strong>.</li>
+<li>Click <strong>Create Application</strong>.</li>
+<li>Choose <strong>Start from scratch</strong> and provide the application name, e.g., "Deal Management".</li>
+<li>Click <strong>Create</strong> and open the application in Studio.</li>
+<li>Add tables, forms, and other artifacts as needed for deal management functions.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Cross Scope Policy</h4>
+<ul>
+<li><strong>Definition</strong>: Define policies for accessing data across different application scopes.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Set Cross Scope Access</strong>:
+<ul>
+<li>Navigate to <strong>System Applications &gt; Studio</strong>.</li>
+<li>Open the application and select the table you want to configure.</li>
+<li>Click on the <strong>Application Access</strong> tab.</li>
+<li>Set the <strong>Accessible from</strong> field to <strong>All application scopes</strong> if you want to allow access from other applications.</li>
+<li>Configure the <strong>Can read</strong>, <strong>Can write</strong>, <strong>Can update</strong>, and <strong>Can delete</strong> options as needed.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Scopes</h4>
+<ul>
+<li><strong>Definition</strong>: Manage application scopes to organize and secure custom applications.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create and Manage Scopes</strong>:
+<ul>
+<li>Navigate to <strong>System Applications &gt; Studio</strong>.</li>
+<li>When creating a new application, a unique scope is automatically assigned.</li>
+<li>Use the scope to ensure that the application artifacts are isolated and do not interfere with other applications.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Update Set</h4>
+<ul>
+<li><strong>Definition</strong>: Use update sets to track and migrate changes between instances.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create an Update Set</strong>:
+<ul>
+<li>Navigate to <strong>System Update Sets &gt; Local Update Sets</strong>.</li>
+<li>Click <strong>New</strong> and provide a name for the update set, e.g., "Deal Management Updates".</li>
+<li>Set the update set as <strong>Current</strong> to capture changes.</li>
+<li>Make your configuration changes, which will be recorded in the update set.</li>
+<li>Use the update set to migrate changes to other instances.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>GitHub</h4>
+<ul>
+<li><strong>Definition</strong>: Integrate with GitHub for version control of application code.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Integrate with GitHub</strong>:
+<ul>
+<li>Navigate to <strong>System Applications &gt; Studio</strong>.</li>
+<li>Open the application and click on the <strong>Source Control</strong> tab.</li>
+<li>Click <strong>Link to Source Control</strong> and provide the GitHub repository URL.</li>
+<li>Follow the prompts to authenticate and link the repository.</li>
+<li>Use GitHub to manage version control, branching, and collaboration.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Domains</h4>
+<ul>
+<li><strong>Definition</strong>: Use domain separation to manage data and processes for different business units.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Configure Domain Separation</strong>:
+<ul>
+<li>Navigate to <strong>Domain Separation &gt; Domains</strong>.</li>
+<li>Click <strong>New</strong> and create domains for different business units, e.g., "Sales", "Marketing".</li>
+<li>Assign users and data to the appropriate domains.</li>
+<li>Configure domain-specific settings to ensure data isolation and process separation.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+	
+
+<br/><br/>
+</div>
+</section>
+
+
+
+<section class="ServiceNowEachTopic 8. User Administration" >
+<div style="font-family:Arial">
+<h3>8. User Administration</h3>
+<h4>Users</h4>
+<ul>
+<li><strong>Definition</strong>: Create user records for employees who will use the deal management system.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create User Records</strong>:
+<ul>
+<li>Navigate to <strong>User Administration &gt; Users</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>User ID</strong>: jdoe</li>
+<li><strong>First Name</strong>: John</li>
+<li><strong>Last Name</strong>: Doe</li>
+<li><strong>Email</strong>: <a class="fui-Link ___140mk30 f2hkw1w f3rmtva f1ewtqcl fyind8e f1k6fduh f1w7gpdv fk6fouc fjoy568 flh3ekv f1s184ao f1mk8lai fnbmjn9 f1o700av f13mvf36 f1cmlufx f9n3di6 f1ids18y f1tx3yz7 f1deo86v f1eh06m1 f1iescvh fhgqx19 f1olyrje f1p93eir f1nev41a" href="mailto:john.doe@example.com" target="_blank" tabindex="0">john.doe@example.com</a></li>
+<li><strong>Department</strong>: Sales</li>
+</ul>
+</li>
+<li>Save the user record.</li>
+<li>Repeat the process to create user records for all employees who will use the system.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Groups</h4>
+<ul>
+<li><strong>Definition</strong>: Create groups for different roles like deal creators, reviewers, and approvers.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create Groups</strong>:
+<ul>
+<li>Navigate to <strong>User Administration &gt; Groups</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Deal Creators</li>
+<li><strong>Description</strong>: Users who can create new deals</li>
+</ul>
+</li>
+<li>Save the group.</li>
+<li>Add members to the group by navigating to the <strong>Group Members</strong> related list and adding users.</li>
+<li>Repeat the process to create groups for <strong>Deal Reviewers</strong> and <strong>Deal Approvers</strong>.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4>Roles</h4>
+<ul>
+<li><strong>Definition</strong>: Define roles to control access to different parts of the deal management system.</li>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create Roles</strong>:
+<ul>
+<li>Navigate to <strong>User Administration &gt; Roles</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: deal_creator</li>
+<li><strong>Description</strong>: Role for users who can create deals</li>
+</ul>
+</li>
+<li>Save the role.</li>
+<li>Assign the role to the <strong>Deal Creators</strong> group by navigating to the <strong>Roles</strong> related list on the group record and adding the role.</li>
+<li>Repeat the process to create roles for <strong>deal_reviewer</strong> and <strong>deal_approver</strong>.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+	
+
+<br/><br/>
+</div>
+</section>
+
+
+
+
+
+<section class="ServiceNowEachTopic Scripts" >
+
+<h3>1. Client Scripts</h3>
+<p>Client Scripts run on the client side (browser) and are used to manage form behavior.</p>
+<ul>
+<li>
+<p><strong>OnLoad</strong>: Executes when a form is loaded.</p>
+<pre><code>function onLoad() {
+    g_form.setReadOnly('short_description', true);
+}
+</code></pre>
+</li>
+<li>
+<p><strong>OnChange</strong>: Executes when a field value changes.</p>
+<pre><code>function onChange(control, oldValue, newValue, isLoading) {
+    if (newValue === 'High') {
+        g_form.setMandatory('priority', true);
+    }
+}
+</code></pre>
+</li>
+<li>
+<p><strong>OnSubmit</strong>: Executes when a form is submitted.</p>
+<pre><code>function onSubmit() {
+    if (g_form.getValue('short_description') === '') {
+        alert('Short description is mandatory');
+        return false;
+    }
+    return true;
+}
+</code></pre>
+</li>
+<li>
+<p><strong>OnCellEdit</strong>: Executes when a cell in a list is edited.</p>
+<pre><code>function onCellEdit(sysIDs, table, oldValues, newValue, callback) {
+    if (newValue === 'Closed') {
+        alert('Cannot change state to Closed');
+        callback(false);
+    } else {
+        callback(true);
+    }
+}
+</code></pre>
+</li>
+</ul>
+<h3>2. Business Rules</h3>
+<p>Business Rules run on the server side and are used to enforce business logic.</p>
+<ul>
+<li><strong>Example</strong>:
+<pre><code>(function executeRule(current, previous /*null when async*/) {
+    if (current.priority == '1 - Critical') {
+        current.short_description = 'Critical issue';
+    }
+})(current, previous);
+</code></pre>
+</li>
+</ul>
+<h3>3. Script Includes</h3>
+<p>Script Includes are reusable server-side scripts.</p>
+<ul>
+<li><strong>Example</strong>:
+<pre><code>var MyScriptInclude = Class.create();
+MyScriptInclude.prototype = {
+    initialize: function() {},
+    myFunction: function() {
+        return 'Hello, world!';
+    },
+    type: 'MyScriptInclude'
+};
+</code></pre>
+</li>
+</ul>
+<h3>4. UI Actions</h3>
+<p>UI Actions add buttons, links, and context menu items.</p>
+<ul>
+<li><strong>Example</strong>:
+<pre><code>function createIncident() {
+    var gr = new GlideRecord('incident');
+    gr.initialize();
+    gr.short_description = 'New incident';
+    gr.insert();
+}
+</code></pre>
+</li>
+</ul>
+<h3>5. UI Policies</h3>
+<p>UI Policies dynamically change form behavior.</p>
+<ul>
+<li><strong>Example</strong>:
+<pre><code>var uiPolicy = new GlideUIPolicy();
+uiPolicy.setTableName('incident');
+uiPolicy.setFieldName('priority');
+uiPolicy.setMandatory(true);
+uiPolicy.setVisible(true);
+uiPolicy.setReadOnly(false);
+uiPolicy.insert();
+</code></pre>
+</li>
+</ul>
+<h3>6. Data Policies</h3>
+<p>Data Policies enforce data consistency.</p>
+<ul>
+<li><strong>Example</strong>:
+<pre><code>var dataPolicy = new GlideDataPolicy();
+dataPolicy.setTableName('incident');
+dataPolicy.setFieldName('short_description');
+dataPolicy.setMandatory(true);
+dataPolicy.insert();
+</code></pre>
+</li>
+</ul>
+<h3>7. GlideAjax</h3>
+<p>GlideAjax is used to call server-side code from the client side.</p>
+<ul>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Script Include</strong>:
+<pre><code>var MyAjaxScript = Class.create();
+MyAjaxScript.prototype = {
+    initialize: function() {},
+    getServerData: function() {
+        return 'Server data';
+    },
+    type: 'MyAjaxScript'
+};
+</code></pre>
+</li>
+<li><strong>Client Script</strong>:
+<pre><code>var ga = new GlideAjax('MyAjaxScript');
+ga.addParam('sysparm_name', 'getServerData');
+ga.getXMLAnswer(function(response) {
+    alert(response);
+});
+</code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<h3>8. Script Actions</h3>
+<p>Script Actions are used to execute scripts in response to events.</p>
+<ul>
+<li><strong>Example</strong>:
+<pre><code>(function executeAction(current) {
+    var gr = new GlideRecord('sys_email');
+    gr.initialize();
+    gr.setValue('subject', 'Incident Created');
+    gr.setValue('body', 'An incident has been created.');
+    gr.setValue('recipient', current.caller_id.email);
+    gr.insert();
+})(current);
+</code></pre>
+</li>
+</ul>
+<h3>9. Events</h3>
+<p>Events are used to trigger actions based on specific conditions.</p>
+<ul>
+<li><strong>Example</strong>:
+<pre><code>gs.eventQueue('incident.created', current, gs.getUserID(), gs.getUserName());
+</code></pre>
+</li>
+</ul>
+<h3>10. Scheduled Jobs</h3>
+<p>Scheduled Jobs are used to run scripts at specified intervals.</p>
+<ul>
+<li><strong>Example</strong>:
+<pre><code>var MyScheduledJob = Class.create();
+MyScheduledJob.prototype = {
+    initialize: function() {},
+    execute: function() {
+        var gr = new GlideRecord('incident');
+        gr.addQuery('state', '!=', 'Closed');
+        gr.query();
+        while (gr.next()) {
+            gr.setValue('state', 'Closed');
+            gr.update();
+        }
+    },
+    type: 'MyScheduledJob'
+};
+</code></pre>
+</li>
+</ul>
+
+<br/><br/>
+</div>
+</section>
+
+
+
+<section class="ServiceNowEachTopic Scripts" >
+
+<h3>1. Email Notifications</h3>
+<p>Email notifications are used to send emails based on specific conditions or events.</p>
+<ul>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create an Email Notification</strong>:
+<ul>
+<li>Navigate to <strong>System Notification &gt; Email &gt; Notifications</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Deal Approval Notification</li>
+<li><strong>Table</strong>: Deal [u_deal]</li>
+<li><strong>When to send</strong>: Insert or Update</li>
+<li><strong>Condition</strong>: <code>current.status == 'Approved'</code></li>
+</ul>
+</li>
+<li>In the <strong>Who will receive</strong> tab, specify the recipients (e.g., Assigned to, Created by).</li>
+<li>In the <strong>What it will contain</strong> tab, define the email subject and message.</li>
+<li>Save the notification.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>2. Email Scripts</h3>
+<p>Email scripts are used to include dynamic content in email notifications.</p>
+<ul>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create an Email Script</strong>:
+<ul>
+<li>Navigate to <strong>System Notification &gt; Email &gt; Email Scripts</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Deal Details Script</li>
+<li><strong>Script</strong>:
+<pre><code>(function() {
+    var deal = new GlideRecord('u_deal');
+    deal.get(current.sys_id);
+    template.print('Deal Name: ' + deal.name + '\n');
+    template.print('Deal Amount: ' + deal.amount + '\n');
+    template.print('Deal Status: ' + deal.status + '\n');
+})();
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Save the email script.</li>
+</ul>
+</li>
+<li><strong>Use the Email Script in a Notification</strong>:
+<ul>
+<li>In the email notification, include the script using the syntax <code>${mail_script:Deal Details Script}</code> in the message body.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>3. Event-Triggered Notifications</h3>
+<p>Event-triggered notifications are used to send emails based on custom events.</p>
+<ul>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create an Event</strong>:
+<ul>
+<li>Navigate to <strong>System Policy &gt; Events &gt; Event Registry</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: deal.approved</li>
+<li><strong>Table</strong>: Deal [u_deal]</li>
+<li><strong>Description</strong>: Event triggered when a deal is approved.</li>
+</ul>
+</li>
+<li>Save the event.</li>
+</ul>
+</li>
+<li><strong>Trigger the Event</strong>:
+<ul>
+<li>Use a Business Rule or Script Include to trigger the event:
+<pre><code>gs.eventQueue('deal.approved', current, gs.getUserID(), gs.getUserName());
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Create an Event-Triggered Notification</strong>:
+<ul>
+<li>Navigate to <strong>System Notification &gt; Email &gt; Notifications</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Deal Approved Notification</li>
+<li><strong>Table</strong>: Deal [u_deal]</li>
+<li><strong>When to send</strong>: Event is fired</li>
+<li><strong>Event name</strong>: deal.approved</li>
+</ul>
+</li>
+<li>Specify the recipients and message content.</li>
+<li>Save the notification.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3>4. Scheduled Notifications</h3>
+<p>Scheduled notifications are used to send emails at specified intervals.</p>
+<ul>
+<li><strong>Example</strong>:
+<ol>
+<li><strong>Create a Scheduled Job</strong>:
+<ul>
+<li>Navigate to <strong>System Definition &gt; Scheduled Jobs</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Weekly Deal Summary</li>
+<li><strong>Run</strong>: Weekly</li>
+<li><strong>Script</strong>:
+<pre><code>var gr = new GlideRecord('u_deal');
+gr.addQuery('status', '!=', 'Closed');
+gr.query();
+while (gr.next()) {
+    gs.eventQueue('deal.weekly_summary', gr, gs.getUserID(), gs.getUserName());
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Save the scheduled job.</li>
+</ul>
+</li>
+<li><strong>Create an Event for the Scheduled Notification</strong>:
+<ul>
+<li>Navigate to <strong>System Policy &gt; Events &gt; Event Registry</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: deal.weekly_summary</li>
+<li><strong>Table</strong>: Deal [u_deal]</li>
+<li><strong>Description</strong>: Event triggered for weekly deal summary.</li>
+</ul>
+</li>
+<li>Save the event.</li>
+</ul>
+</li>
+<li><strong>Create an Event-Triggered Notification</strong>:
+<ul>
+<li>Navigate to <strong>System Notification &gt; Email &gt; Notifications</strong>.</li>
+<li>Click <strong>New</strong> and fill in the details:
+<ul>
+<li><strong>Name</strong>: Weekly Deal Summary Notification</li>
+<li><strong>Table</strong>: Deal [u_deal]</li>
+<li><strong>When to send</strong>: Event is fired</li>
+<li><strong>Event name</strong>: deal.weekly_summary</li>
+</ul>
+</li>
+<li>Specify the recipients and message content.</li>
+<li>Save the notification.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+</section>
+
+
+
+<section class="ServiceNowEachTopic Glide scripts" >
+
+<p> Glide scripts with examples for ServiceNow:</p>
+<h3>1. GlideRecord</h3>
+<p><strong>GlideRecord</strong> is used to interact with the ServiceNow database from server-side scripts.</p>
+<ul>
+<li>
+<p><strong>Querying Records</strong>:</p>
+<pre node="[object Object]"><code>var gr = new GlideRecord('incident');
+gr.addQuery('active', true);
+gr.query();
+while (gr.next()) {
+    gs.log('Incident Number: ' + gr.number);
+}
+</code></pre>
+</li>
+<li>
+<p><strong>Inserting a Record</strong>:</p>
+<pre node="[object Object]"><code>var gr = new GlideRecord('incident');
+gr.initialize();
+gr.short_description = 'New Incident';
+gr.insert();
+</code></pre>
+</li>
+<li>
+<p><strong>Updating a Record</strong>:</p>
+<pre node="[object Object]"><code>var gr = new GlideRecord('incident');
+if (gr.get('sys_id', 'your_record_sys_id')) {
+    gr.short_description = 'Updated Incident';
+    gr.update();
+}
+</code></pre>
+</li>
+<li>
+<p><strong>Deleting a Record</strong>:</p>
+<pre node="[object Object]"><code>var gr = new GlideRecord('incident');
+if (gr.get('sys_id', 'your_record_sys_id')) {
+    gr.deleteRecord();
+}
+</code></pre>
+</li>
+</ul>
+<h3>2. GlideAjax</h3>
+<p><strong>GlideAjax</strong> is used to call server-side code from client-side scripts.</p>
+<ul>
+<li>
+<p><strong>Client Script</strong>:</p>
+<pre node="[object Object]"><code>function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        return;
+    }
+    var ga = new GlideAjax('MyScriptInclude');
+    ga.addParam('sysparm_name', 'myFunction');
+    ga.addParam('sysparm_myParam', newValue);
+    ga.getXMLAnswer(function(response) {
+        var answer = response.responseXML.documentElement.getAttribute('answer');
+        g_form.setValue('my_field', answer);
+    });
+}
+</code></pre>
+</li>
+<li>
+<p><strong>Script Include</strong>:</p>
+<pre node="[object Object]"><code>var MyScriptInclude = Class.create();
+MyScriptInclude.prototype = Object.extendsObject(AbstractAjaxProcessor, {
+    myFunction: function() {
+        var myParam = this.getParameter('sysparm_myParam');
+        // Perform some server-side processing
+        return 'Processed: ' + myParam;
+    }
+});
+</code></pre>
+</li>
+</ul>
+<h3>3. GlideForm (g_form)</h3>
+<p><strong>GlideForm</strong> is used to interact with form fields in client-side scripts.</p>
+<ul>
+<li>
+<p><strong>Setting Field Value</strong>:</p>
+<pre node="[object Object]"><code>g_form.setValue('short_description', 'New Value');
+</code></pre>
+</li>
+<li>
+<p><strong>Getting Field Value</strong>:</p>
+<pre node="[object Object]"><code>var value = g_form.getValue('short_description');
+</code></pre>
+</li>
+<li>
+<p><strong>Making a Field Read-Only</strong>:</p>
+<pre node="[object Object]"><code>g_form.setReadOnly('short_description', true);
+</code></pre>
+</li>
+<li>
+<p><strong>Showing an Info Message</strong>:</p>
+<pre node="[object Object]"><code>g_form.addInfoMessage('This is an info message.');
+</code></pre>
+</li>
+</ul>
+<h3>4. GlideUser (g_user)</h3>
+<p><strong>GlideUser</strong> is used to get information about the current user in client-side scripts.</p>
+<ul>
+<li>
+<p><strong>Getting User's Full Name</strong>:</p>
+<pre node="[object Object]"><code>var fullName = g_user.getFullName();
+alert('Full Name: ' + fullName);
+</code></pre>
+</li>
+<li>
+<p><strong>Checking User Role</strong>:</p>
+<pre node="[object Object]"><code>if (g_user.hasRole('admin')) {
+    alert('User is an admin.');
+}
+</code></pre>
+</li>
+</ul>
+<br/><br/>
+</div>
+</section>
+
+
+
+<section class="ServiceNowEachTopic Glide tables" >
+
+<h3>Core Tables</h3>
+<ol>
+<li><strong>Task [task]</strong>: The base table for all task-related tables like Incident, Change, Problem, etc.</li>
+<li><strong>Configuration Item [cmdb_ci]</strong>: The base table for all configuration items in the CMDB.</li>
+<li><strong>User [sys_user]</strong>: Stores user records.</li>
+<li><strong>Group [sys_user_group]</strong>: Stores user group records.</li>
+<li><strong>Role [sys_user_role]</strong>: Stores user role records.</li>
+</ol>
+<h3>Data Dictionary Tables</h3>
+<ol>
+<li><strong>Tables [sys_db_object]</strong>: Stores metadata about each table in the ServiceNow database.</li>
+<li><strong>Dictionary [sys_dictionary]</strong>: Defines the fields for each table, including their data types, lengths, default values, and other attributes.</li>
+<li><strong>Documentation [sys_documentation]</strong>: Stores the human-readable labels, help text, and language information for fields<div class="___frx9oy0 f14t3ns0"><a role="button" aria-expanded="false" data-testid="citation" class="fai-Citation r9zkot ___1wvzp64 f16xq7d1 fkfq4zb f5ogflp f1hqa2wf f1f09k3d finvdd3 fzkkow9 fcdblym fg706s2 fjik90z fj3muxo f1akhkt f1aperda f1lxtadh" aria-label="Open popover for citation at position 1." tabindex="0" data-tabster="{&quot;restorer&quot;:{&quot;type&quot;:1}}">1</a></div>.</li>
+</ol>
+<h3>IT Service Management (ITSM) Tables</h3>
+<ol>
+<li><strong>Incident [incident]</strong>: Stores incident records.</li>
+<li><strong>Change Request [change_request]</strong>: Stores change request records.</li>
+<li><strong>Problem [problem]</strong>: Stores problem records.</li>
+<li><strong>Service Catalog [sc_cat_item]</strong>: Stores service catalog items.</li>
+<li><strong>Request [sc_request]</strong>: Stores service catalog requests.</li>
+<li><strong>Requested Item [sc_req_item]</strong>: Stores individual items requested in a service catalog request.</li>
+<li><strong>Catalog Task [sc_task]</strong>: Stores tasks related to service catalog requests.</li>
+</ol>
+<h3>Configuration Management Database (CMDB) Tables</h3>
+<ol>
+<li><strong>CI Relationship [cmdb_rel_ci]</strong>: Stores relationships between configuration items.</li>
+<li><strong>Hardware [cmdb_ci_hardware]</strong>: Stores hardware configuration items.</li>
+<li><strong>Software [cmdb_ci_software]</strong>: Stores software configuration items.</li>
+</ol>
+<h3>Knowledge Management Tables</h3>
+<ol>
+<li><strong>Knowledge [kb_knowledge]</strong>: Stores knowledge articles.</li>
+<li><strong>Knowledge Base [kb_knowledge_base]</strong>: Stores knowledge bases.</li>
+</ol>
+<h3>Workflow and Automation Tables</h3>
+<ol>
+<li><strong>Workflow [wf_workflow]</strong>: Stores workflow definitions.</li>
+<li><strong>Flow Designer [sys_flow_context]</strong>: Stores flow context records for Flow Designer.</li>
+<li><strong>Scheduled Jobs [sys_trigger]</strong>: Stores scheduled jobs.</li>
+</ol>
+<h3>Security Tables</h3>
+<ol>
+<li><strong>Access Control [sys_security_acl]</strong>: Stores access control rules.</li>
+<li><strong>User Criteria [sys_user_criteria]</strong>: Stores user criteria for access control.</li>
+</ol>
+<p>These tables are essential for various functionalities in ServiceNow and can help you manage and customize your instance effectively</p>
+
+<br/><br/>
+</div>
+</section>
+
+
+1. Create a Scheduled Job
+Navigate to Scheduled Jobs Module:
+Go to System Definition > Scheduled Jobs.
+Create a New Scheduled Job:
+Click New to create a new scheduled job.
+Enter the Name and Description for the job.
+Set the Run field to specify when the job should run (e.g., daily, weekly, monthly).
+Define the Script that should be executed when the job runs.
+Click Submit.
+
+2. Configure Scheduled Job Settings
+Set the Schedule:
+Open the scheduled job record.
+In the Schedule section, define the frequency and timing for the job (e.g., every Monday at 8 AM).
+Script Execution:
+In the Script field, enter the JavaScript code that should be executed when the job runs.
+Example script:
+var gr = new GlideRecord('incident');
+gr.addQuery('priority', 1);
+gr.query();
+while (gr.next()) {
+    gr.priority = 2;
+    gr.update();
+}
+
+3. Monitor Scheduled Jobs
+View Scheduled Jobs:
+Navigate to System Scheduler > Scheduled Jobs.
+View the list of scheduled jobs and their statuses (e.g., Ready, Running, Queued, Error).
+Check Job Logs:
+Open a scheduled job record.
+In the Logs related list, view the execution logs to monitor the job's performance and troubleshoot any issues.
+
+
+4. Special Cases in Job Scheduling
+End of Month Scheduling:
+For jobs that need to run at the end of the month, set the schedule to run on the last day of each month.
+Weekday Scheduling:
+For jobs that need to run only on weekdays, configure the schedule to exclude weekends.
+
+
+5. Troubleshoot Scheduled Jobs
+Error Handling:
+If a scheduled job encounters an error, check the logs for detailed error messages.
+Use Application Insights for additional troubleshooting information1.
+
+
+6. Examples of Scheduled Jobs
+Generate and Distribute Reports:
+Automatically generate and email reports to stakeholders.
+Automate Record Creation:
+Create incidents, change requests, or configuration items based on templates.
+
+
+<section class="ServiceNowEachTopic Glide tables" >
+
+some important _list.do links in ServiceNow that you can use to access various tables directly:
+
+Core Tables
+Task: task_list.do
+Incident: incident_list.do
+Change Request: change_request_list.do
+Problem: problem_list.do
+Configuration Item (CI): cmdb_ci_list.do
+User: sys_user_list.do
+Group: sys_user_group_list.do
+Role: sys_user_role_list.do
+IT Service Management (ITSM) Tables
+Service Catalog: sc_cat_item_list.do
+Request: sc_request_list.do
+Requested Item: sc_req_item_list.do
+Catalog Task: sc_task_list.do
+Configuration Management Database (CMDB) Tables
+CI Relationship: cmdb_rel_ci_list.do
+Hardware: cmdb_ci_hardware_list.do
+Software: cmdb_ci_software_list.do
+Knowledge Management Tables
+Knowledge: kb_knowledge_list.do
+Knowledge Base: kb_knowledge_base_list.do
+Workflow and Automation Tables
+Workflow: wf_workflow_list.do
+Flow Designer: sys_flow_context_list.do
+Scheduled Jobs: sys_trigger_list.do
+Security Tables
+Access Control: sys_security_acl_list.do
+User Criteria: sys_user_criteria_list.do
+Data Dictionary Tables
+Tables: sys_db_object_list.do
+Dictionary: sys_dictionary_list.do
+Documentation: sys_documentation_list.do
+
+<br/><br/>
+</div>
+</section>
+
+
+<section class="ServiceNowEachTopic Glide tables" >
+<h3>Policies</h3>
+<ol>
+<li><strong>UI Policies</strong>: sys_ui_policy_list.do</li>
+<li><strong>Data Policies</strong>: sys_data_policy_list.do</li>
+<li><strong>Access Control (ACL) Rules</strong>: sys_security_acl_list.do</li>
+<li><strong>User Criteria</strong>: sys_user_criteria_list.do</li>
+</ol>
+<h3>Rules</h3>
+<ol>
+<li><strong>Business Rules</strong>: sys_script_list.do</li>
+<li><strong>Client Scripts</strong>: sys_script_client_list.do</li>
+<li><strong>UI Actions</strong>: sys_ui_action_list.do</li>
+<li><strong>UI Scripts</strong>: sys_ui_script_list.do</li>
+<li><strong>Script Includes</strong>: sys_script_include_list.do</li>
+<li><strong>Script Actions</strong>: sysevent_script_action_list.do</li>
+<li><strong>Scheduled Jobs</strong>: sys_trigger_list.do</li>
+</ol>
+<h3>Scripts</h3>
+<ol>
+<li><strong>Email Scripts</strong>: sys_script_email_list.do</li>
+<li><strong>Transform Map Scripts</strong>: sys_transform_map_script_list.do</li>
+<li><strong>Scripted REST APIs</strong>: sys_ws_operation_list.do</li>
+<li><strong>Scripted REST Resources</strong>: sys_ws_resource_list.do</li>
+<li><strong>Scripted REST Messages</strong>: sys_rest_message_list.do</li>
+</ol>
+<br/><br/>
+</div>
+</section>
+
+sys_script_include_list.do
+
+sys_ws_operation_list.do
+sys.scripts.do
+
+var EnterpriseCatalogJsonIdentifier = Class.create();
+    EnterpriseCatalogJsonIdentifier.prototype = {
+        initialize: function() {
+    },
+    _attachFile: function(jsonToattach, catlogIdentifier, version, tablename, jsonFlag) {
+        var filename;
+        var attachfile = new GlideSysAttachment();
+        var attachref = new GlideRecord(tablename);
+
+
+        if (tablename == 'sn_prd_pm_product_offering_catalog')
+
+        {
+            attachref.get('external_id', catlogIdentifier);
+            if (jsonFlag == 'entJSON')
+                filename = catlogIdentifier + '_entitlement_v' + version + '.json';
+            else
+                filename = catlogIdentifier + '_catalog_v' + version + '.json';
+        } else {
+            attachref.get('catalog_identifier', catlogIdentifier);
+            filename = catlogIdentifier + '_entitlement_v' + version + '.json';
+        }
+        fileId1 = attachfile.write(
+            attachref,
+            filename,
+            'application/json',
+            jsonToattach
+        );
+    },
+
+    type: 'EnterpriseCatalogJsonIdentifier'
+};
+
+// Create an instance of the class
+var entcatalogJson = new EnterpriseCatalogJsonIdentifier();
+
+// Call the _attachFile function
+entcatalogJson._attachFile('90e95644878ca29019cf40cf8bbb35e7', '{"key": "value"}', 'x_hpmms_ent_cat_bu_enterprise_catalog', 'example.json');
